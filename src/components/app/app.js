@@ -1,10 +1,9 @@
 import React, { use } from 'react';
-import logo from '../../images/logo.svg';
-
-import { Button, Card, Img } from '../ui';
-import Footer from '../footer/footer';
-
 import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { Header, Footer, Mentorship, Contacts, Home } from '..';
+
 
 const theme = {
   dark: {
@@ -12,7 +11,8 @@ const theme = {
     alt: '#43B581',
     text: 'white',
     bg: '#18191c',
-    bg2: '#202225'
+    bg2: '#202225', //very dark
+    bg3: '#36393F' // bg for card
   },
   light: {
     primary: 'black',
@@ -23,12 +23,19 @@ const theme = {
 const app = () => {
   return (
     <ThemeProvider theme={theme.dark}>
-      <Img src={ require('./top.png') }></Img>
-      <Button>Normal Button</Button>
-      <Button primary>Primary Button</Button>
-      <Button alt>Alt Button</Button>
-      <Card>Yo</Card>
-      <Footer />
+      <Router>
+        <Header />
+
+        <main>
+          <Switch>
+            <Route exact path="/mentorship"><Mentorship /></Route>
+            <Route exact path="/contacts"><Contacts /></Route>
+            <Route exact path="/"><Home /></Route>
+          </Switch>
+        </main>
+
+        <Footer />
+      </Router>
     </ThemeProvider>
   );
 }
