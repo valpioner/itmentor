@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { Header, Footer, Mentorship, Contacts, Home } from '..';
 
-
 const theme = {
   dark: {
     primary: '#7289DA',
@@ -16,7 +15,7 @@ const theme = {
   },
   light: {
     primary: 'black',
-    bg: '#F9F9F9',
+    bg: '#F9F9F9'
   }
 };
 
@@ -28,9 +27,15 @@ const app = () => {
 
         <main>
           <Switch>
-            <Route exact path="/mentorship"><Mentorship /></Route>
-            <Route exact path="/contacts"><Contacts /></Route>
-            <Route exact path="/"><Home /></Route>
+            <Route exact path="/mentorship">
+              <Mentorship />
+            </Route>
+            <Route exact path="/contacts">
+              <Contacts />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
           </Switch>
         </main>
 
@@ -38,6 +43,6 @@ const app = () => {
       </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default app;
