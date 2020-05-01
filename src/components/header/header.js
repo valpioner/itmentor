@@ -13,9 +13,10 @@ const StyledHeader = styled.header`
   width: auto;
   // border: 1px solid orange;
   position: absolute;
+  z-index: 1;
 `;
 
-const Header = props => {
+const Header = (props) => {
   return (
     <StyledHeader>
       {/* <img src={logo} alt="itmentor website logo" /> */}

@@ -3,11 +3,27 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-import logo from '../../images/logo.svg';
+import logo from '../../images/logo3.png';
+
+const MyLogo = styled.div`
+  display: flex;
+  align-items: center;
+  color: #fff;
+  img {
+    height: 30px;
+  }
+  span {
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-family: 'consolas';
+  }
+`;
 
 const StyledNavbar = styled.nav`
   display: flex;
   font-size: 14px;
+  align-items: center;
+  padding: 0 20px;
 
   ul {
     margin: 0;
@@ -34,10 +50,13 @@ const StyledNavbar = styled.nav`
   }
 `;
 
-const Navbar = props => {
+const Navbar = (props) => {
   return (
     <StyledNavbar>
-      <img src={logo} alt="itmentor website logo" />
+      <MyLogo>
+        <img src={logo} alt="itmentor website logo" />
+        <span>IT Mentor</span>
+      </MyLogo>
       <ul>
         <li>
           <Link to="/mentorship">Менторство</Link>

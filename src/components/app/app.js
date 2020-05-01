@@ -5,23 +5,27 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Header, Footer, Mentorship, Contacts, Home } from '..';
 
 const theme = {
+  light: {
+    primary: '#00ba7c',
+    alt: '#00ba7c',
+    text: '#fff',
+    bg: '#18191c',
+    bg2: '#202225', //very dark
+    bg3: '#36393F', // bg for card
+  },
   dark: {
     primary: '#7289DA',
     alt: '#43B581',
     text: 'white',
     bg: '#18191c',
     bg2: '#202225', //very dark
-    bg3: '#36393F' // bg for card
+    bg3: '#36393F', // bg for card
   },
-  light: {
-    primary: 'black',
-    bg: '#F9F9F9'
-  }
 };
 
 const app = () => {
   return (
-    <ThemeProvider theme={theme.dark}>
+    <ThemeProvider theme={theme.light}>
       <Router>
         <Header />
 
